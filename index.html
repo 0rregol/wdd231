@@ -1,1 +1,90 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta name="description" content="index wdd231">
+    <meta name="author" content="Cristian Orrego">
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Cristian Orrego</title>
+  </head>
+  <body>
+    <header>
+      <div class="top">
+        <img src="images/yo.jpg" alt="Profile Picture" class="profile-photo">
+        <h1>Cristian Jorge Orrego</h1>
+      </div>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">Final </a></li>
+                <li><a href="#">GitHub Profile </a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+              <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <main>
+      <h1>Home</h1>
+      <div class="container">
+      <section class="left">
+        <div class="card">
+          <div class="blue"><h2>Course Work</h2></div>
+          <div class="card-content">
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        </div>
+      </section>
+      <section class="right">
+        <div class="card">
+          <div class="blue"><h2>Villa Alemana, Chile</h2></div>
+          <div class="card-content">
+      <figure>
+        <img src="images/valemana.jpg" alt="Villa Alemana">
+        <figcaption>Villa Alemana is a beautiful city located in the Valparaíso Region of Chile.</figcaption>
+      </figure>
+      </div>
+      </div>
+    </section>
+  </div>
+      <section class="down">
+        <div class="card">
+          <div class="blue"><h2>Web and Computer Programming Certificate</h2></div>
+          <div class="card-content">
+            
+              <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="CSE">CSE</button>
+              <button class="filter-btn" data-filter="WDD">WDD</button>
+              </div>
+         
+          <div class="courses">
+              <div class="course CSE"><button class="complete">CSE 110</button></div>
+            <div class="course WDD"><button class="complete">WDD 130</button></div>
+               <div class="course CSE"><button class="complete">CSE 111</button></div>
+               <div class="course CSE"><button class="incomplete">CSE 210</button></div>
+            <div class="course WDD"><button class="complete">WDD 131</button></div>
+            <div class="course WDD"><button class="incomplete">WDD 231</button></div>
+        </div>
+        </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; <span id="currentyear"></span> | Cristian Orrego | Chile</p>
+      <span class="yellow">Last Modification </span> <span id="lastModified" class="yellow"></span>
+  </footer>
+  </body>
+</html>
