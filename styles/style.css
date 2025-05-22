@@ -1,1 +1,215 @@
+*{
+    font-family: 'Roboto', sans-serif; 
+    margin: 0;
+    padding: 0;
+    
+ }
+body {
+    background-color: #ffffff;
+    color: #333;
+    
+}
 
+header {
+    background-color: #0085C7;
+    color: rgb(197, 230, 246);
+    width: 100%;
+  
+} 
+.top {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top img {
+    width: 150px;
+    height: 150px;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
+    margin-right: 20px;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    padding: 20px 20px;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.nav-links li {
+    margin: 0 35px;
+    list-style: none;
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+.nav-links a.active {
+    color: #969393; 
+}
+      
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+}
+h1{
+    margin-left: 20px;
+}
+
+
+
+.left {
+    grid-column: span 8;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.right {
+    grid-column: span 4;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+.card{
+    background-color: #ffffff;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    
+}
+.blue{
+    background-color: #0085C7;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.card-content {
+    padding: 40px;
+    min-height: 200px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000000;
+       }
+        
+.filter-btn {
+    background-color: black;
+    color: white;
+    width: 20%;
+        }
+        
+.filter-btn.active {
+    background-color: #4a4a4a;
+    color: white;
+        }
+        
+.courses {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.course.CSE {
+    background-color: #ffffff;
+}
+.course.WDD {
+    background-color: #ffffff;
+}
+
+button{
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.complete{
+    background-color: rgb(62, 43, 43);
+    color: white;
+}
+.incomplete{
+    background-color: rgb(218, 214, 214);
+    color: black;
+}
+footer {
+    background-color: #0085C7;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 1rem;
+  }
+  .hamburger{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 769px) {
+    nav{
+        justify-content: space-between;
+       }
+       .nav-links{
+         display: none;
+         position: absolute;
+         right: 0;
+         background-color: #000000;
+         width: 100%;
+         flex-direction: column;
+         text-align: center;
+         margin-top: 30px;
+       }
+       .nav-links li{
+         margin: 15px 0 ;
+         text-align: center;
+       }
+       .hamburger{
+         display: flex;
+         z-index: 999;
+         align-items: center;
+       
+       } 
+       .nav-links.show{
+         display: flex;
+         background-color:#000000;
+       }
+
+        .left, .right {
+            grid-column: span 12;
+            width: 100%;
+        }
+        .container {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .all-courses {
+            grid-template-columns: repeat(1, 1fr);
+        }
+   
+  }
