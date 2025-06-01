@@ -1,37 +1,44 @@
 document.addEventListener('DOMContentLoaded', async () => {
+ 
   const container = document.getElementById('business-container');
-  
+  const gridBtn = document.getElementById('grid-btn');
+  const listBtn = document.getElementById('list-btn');
+
+
   async function loadBusinesses() {
-    try {
-      const response = await fetch('data/members.json');
-      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-      const data = await response.json();
-      return Array.isArray(data) ? data : []; // Asegura que sea un array
-    } catch (error) {
-      console.error('Error loading JSON:', error);
-      return []; // Retorna array vacío si hay error
-    }
+    const response = await fetch('./data/members.json');
+    return await response.json();
   }
 
-  function renderBusinesses(businesses) {
-    if (!businesses.length) {
-      container.innerHTML = '<p class="error">No businesses found. Please try again later.</p>';
-      return;
-    }
-    
+
+  function renderBusinesses(businesses, viewType = 'grid') {
+    container.className = `${viewType}-view`; // Añade la clase 'grid-view' o 'list-view'
     container.innerHTML = businesses.map(biz => `
       <div class="business-card">
-        <img src="images/${biz.image || 'placeholder.jpg'}" alt="${biz.name}">
+        <img src="images/${biz.image}" alt="${biz.name}">
         <h3>${biz.name}</h3>
         <p>📍 ${biz.address}</p>
         <p>📞 ${biz.phone}</p>
-        <p>🌐 <a href="${biz.url}" target="_blank">Visit Website</a></p>
+        <p>🌐 <a href="${biz.url}" target="_blank">Website</a></p>
         <p>⭐ ${biz.membership} Member</p>
       </div>
     `).join('');
   }
 
-  // Inicialización
+
+  gridBtn.addEventListener('click', () => {
+    gridBtn.classList.add('active');
+    listBtn.classList.remove('active');
+    renderBusinesses(businesses, 'grid');
+  });
+
+  listBtn.addEventListener('click', () => {
+    listBtn.classList.add('active');
+    gridBtn.classList.remove('active');
+    renderBusinesses(businesses, 'list');
+  });
+
+ 
   const businesses = await loadBusinesses();
-  renderBusinesses(businesses);
+  renderBusinesses(businesses, 'grid'); // Vista por defecto: grid
 });
