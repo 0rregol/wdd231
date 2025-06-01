@@ -88,27 +88,18 @@ nav a {
 
 .list-view .business-card {
   display: flex;
-  margin-bottom: 15px;
   align-items: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
 }
 
 .list-view .business-card img {
-  display: none;
+  display: none; /* Oculta imágenes en lista */
 }
 
 .list-view .business-card > div {
-  flex: 1;
-  padding-left: 15px;
+  margin-left: 15px;
 }
 
 
-@media (max-width: 600px) {
-  .grid-view {
-    grid-template-columns: 1fr;
-  }
-  
-  nav li {
-    display: block;
-    margin: 10px 0;
-  }
-}
