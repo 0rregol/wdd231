@@ -95,7 +95,7 @@ nav a {
 }
 
 .list-view .business-card img {
-  display: none; /* Oculta imágenes en lista */
+  display: none;
 }
 
 .list-view .business-card > div {
