@@ -1,0 +1,51 @@
+[
+
+  {
+    "name": "Panadería La Esquina",
+    "address": "Calle Limache 220, Villa Alemana",
+    "phone": "+56 32 2563 789",
+    "url": "https://www.panaderialaesquina.cl",
+    "image": "panaderia.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Ferretería Villa Alemana",
+    "address": "Av. Diego Portales 780, Villa Alemana",
+    "phone": "+56 32 2890 123",
+    "url": "https://www.ferreteriavillalemana.cl",
+    "image": "ferreteria.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Óptica Claravisión",
+    "address": "Plaza de Armas 150, Local 12, Villa Alemana",
+    "phone": "+56 32 2654 321",
+    "url": "https://www.opticaclaravision.cl",
+    "image": "optica.jpg",
+    "membership": "Bronze"
+  },
+  {
+    "name": "Clínica Dental Sonrisa Fresca",
+    "address": "Calle Quillota 340, Villa Alemana",
+    "phone": "+56 32 2789 456",
+    "url": "https://www.sonrisafresca.cl",
+    "image": "dentista.jpg",
+    "membership": "Silver"
+  },
+  {
+    "name": "Gimnasio Active",
+    "address": "Av. Villa Alemana 1200",
+    "phone": "+56 32 2901 234",
+    "url": "https://www.gimnasioactive.cl",
+    "image": "gimnasio.jpg",
+    "membership": "Gold"
+  },
+  {
+    "name": "Florería Jardín Mágico",
+    "address": "Calle Los Aromos 560, Villa Alemana",
+    "phone": "+56 32 2765 432",
+    "url": "https://www.jardinmagico.cl",
+    "image": "floreria.jpg",
+    "membership": "Silver"
+  }
+]
