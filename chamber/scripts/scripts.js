@@ -102,7 +102,7 @@ async function getBusinesses() {
     if (businessCards.length === 0) return;
 
     try {
-        const response = await fetch('./data/members.json');
+        const response = await fetch('data/members.json');
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
