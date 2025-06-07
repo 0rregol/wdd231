@@ -193,6 +193,34 @@ nav {
 }
 
 
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex-wrap: wrap;
+  font-family: sans-serif;
+}
+
+.footer-left,
+.footer-right {
+  width: 30%;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+
+.footer-center {
+  width: 40%;
+  text-align: center;
+}
+
+.footer-center a img {
+  
+  margin: 0 10px;
+  transition: filter 0.3s;
+}
+
+
 
 @media only screen and (max-width: 769px) {
     nav {
