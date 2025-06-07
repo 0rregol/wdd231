@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.querySelector('.nav-links');
     
-    const hamburguesa = document.getElementById('hamburger');
-    const enlaces = document.querySelector('.nav-links');
-    
-    if (hamburguesa && enlaces) {
-        hamburguesa.addEventListener('click', () => {
-            enlaces.classList.toggle('show');
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
         });
     }
 
-    
+    // Load all data
     loadAllData();
 });
 
@@ -41,15 +41,15 @@ async function getCurrentWeather() {
             <div class="weather-info">
                 <p class="temperature">${Math.round(data.main.temp)}°C</p>
                 <p class="description">${capitalizeFirstLetter(data.weather[0].description)}</p>
-                <p>Max: ${Math.round(data.main.temp_max)}°C</p>
-                <p>Min: ${Math.round(data.main.temp_min)}°C</p>
-                <p>Humedad: ${data.main.humidity}%</p>
-                <p>Viento: ${data.wind.speed} m/s</p>
+                <p>High: ${Math.round(data.main.temp_max)}°C</p>
+                <p>Low: ${Math.round(data.main.temp_min)}°C</p>
+                <p>Humidity: ${data.main.humidity}%</p>
+                <p>Wind: ${data.wind.speed} m/s</p>
             </div>
         `;
     } catch (error) {
         console.error('Error fetching current weather:', error);
-        weatherCurrent.innerHTML = '<p>Datos meteorológicos no disponibles</p>';
+        weatherCurrent.innerHTML = '<p>Weather data unavailable</p>';
     }
 }
 
@@ -65,7 +65,7 @@ async function getWeatherForecast() {
         }
         
         const data = await response.json();
-        console.log('Forecast data:', data); 
+        console.log('Forecast data:', data);
 
         const tomorrow = data.list.find(item => {
             const date = new Date(item.dt * 1000);
@@ -80,12 +80,12 @@ async function getWeatherForecast() {
         weatherForecast.innerHTML = `
             <div class="forecast-info">
                 <div class="forecast-day">
-                    <p><strong>Mañana</strong></p>
+                    <p><strong>Tomorrow</strong></p>
                     <p>${Math.round(tomorrow.main.temp)}°C</p>
                     <p>${capitalizeFirstLetter(tomorrow.weather[0].description)}</p>
                 </div>
                 <div class="forecast-day">
-                    <p><strong>Pasado mañana</strong></p>
+                    <p><strong>Day after tomorrow</strong></p>
                     <p>${Math.round(dayAfter.main.temp)}°C</p>
                     <p>${capitalizeFirstLetter(dayAfter.weather[0].description)}</p>
                 </div>
@@ -93,7 +93,7 @@ async function getWeatherForecast() {
         `;
     } catch (error) {
         console.error('Error fetching forecast:', error);
-        weatherForecast.innerHTML = '<p>Pronóstico no disponible</p>';
+        weatherForecast.innerHTML = '<p>Forecast unavailable</p>';
     }
 }
 
@@ -109,9 +109,9 @@ async function getBusinesses() {
         }
 
         const businesses = await response.json();
-        console.log('Businesses data:', businesses);  
+        console.log('Businesses data:', businesses);
 
-        const selectedBusinesses = businesses.slice(0, 3); // 👈 aquí el cambio
+        const selectedBusinesses = businesses.slice(0, 3);
 
         selectedBusinesses.forEach((business, index) => {
             const membershipClass = business.membership ? business.membership.toLowerCase() : '';
@@ -124,7 +124,7 @@ async function getBusinesses() {
                 <p class="business-address">${business.address}</p>
                 <p class="business-phone">${business.phone}</p>
                 <p class="business-url">
-                    <a href="${business.url}" target="_blank">Visitar sitio web</a>
+                    <a href="${business.url}" target="_blank">Visit website</a>
                 </p>
                 ${business.membership ? 
                     `<span class="membership-badge ${membershipClass}">${business.membership}</span>` : 
@@ -134,12 +134,14 @@ async function getBusinesses() {
     } catch (error) {
         console.error('Error fetching businesses:', error);
         businessCards.forEach(card => {
-            card.innerHTML = '<p>Información de negocio no disponible</p>';
+            card.innerHTML = '<p>Business information unavailable</p>';
         });
     }
 }
 
-
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+// Display last modified date
+document.getElementById("lastModified").textContent = document.lastModified;
