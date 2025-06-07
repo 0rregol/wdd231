@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu
+   
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.querySelector('.nav-links');
     
@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Load all data
+   
     loadAllData();
 });
 
@@ -36,16 +36,35 @@ async function getCurrentWeather() {
         
         const data = await response.json();
         console.log('Current weather data:', data); 
-        
-        weatherCurrent.innerHTML = `
-            <div class="weather-info">
-                <p class="temperature">${Math.round(data.main.temp)}°C</p>
-                <p class="description">${capitalizeFirstLetter(data.weather[0].description)}</p>
-                <p>High: ${Math.round(data.main.temp_max)}°C</p>
-                <p>Low: ${Math.round(data.main.temp_min)}°C</p>
-                <p>Humidity: ${data.main.humidity}%</p>
-                <p>Wind: ${data.wind.speed} m/s</p>
-            </div>
+
+    
+        const temp = Math.round(data.main.temp);
+        const description = capitalizeFirstLetter(data.weather[0].description);
+        const iconCode = data.weather[0].icon;
+        const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+
+    
+        const sunriseTime = new Date(data.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        const sunsetTime = new Date(data.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+
+            weatherCurrent.innerHTML = `
+           <div class="weather-info">
+  <div class="weather-left">
+    <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" 
+         alt="${data.weather[0].description}" 
+         class="weather-icon">
+  </div>
+  <div class="weather-right">
+    <p class="temperature">${Math.round(data.main.temp)}°C</p>
+    <p class="description">${capitalizeFirstLetter(data.weather[0].description)}</p>
+    <p>High: ${Math.round(data.main.temp_max)}°C</p>
+    <p>Low: ${Math.round(data.main.temp_min)}°C</p>
+    <p>Humidity: ${data.main.humidity}%</p>
+    <p>Sunrise: ${sunriseTime}</p>
+    <p>Sunset: ${sunsetTime}</p>
+  </div>
+</div>
         `;
     } catch (error) {
         console.error('Error fetching current weather:', error);
