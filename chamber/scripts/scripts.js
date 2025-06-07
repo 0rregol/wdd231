@@ -107,13 +107,12 @@ async function getBusinesses() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        
+
         const businesses = await response.json();
         console.log('Businesses data:', businesses);  
-        
-        const shuffled = [...businesses].sort(() => 0.5 - Math.random());
-        const selectedBusinesses = shuffled.slice(0, 3);
-        
+
+        const selectedBusinesses = businesses.slice(0, 3); // 👈 aquí el cambio
+
         selectedBusinesses.forEach((business, index) => {
             const membershipClass = business.membership ? business.membership.toLowerCase() : '';
             
@@ -139,6 +138,7 @@ async function getBusinesses() {
         });
     }
 }
+
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
