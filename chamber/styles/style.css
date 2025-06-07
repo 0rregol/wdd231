@@ -97,13 +97,19 @@ nav {
 }
 .cards-container {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
   gap: 20px;
   padding: 20px;
   margin: 20px auto;
   max-width: 1200px;
 }
 
+.cards-container.first-row {
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.cards-container.second-row {
+  grid-template-columns: 1fr 1fr 1fr;
+}
 .card {
   background-color: white;
   border-radius: 8px;
@@ -119,10 +125,6 @@ nav {
   padding-bottom: 10px;
 }
 
-
-.cards-container:nth-of-type(2) {
-  grid-template-columns: 1fr 1fr 1fr;
-}
 
 .business-card {
   text-align: center;
