@@ -161,6 +161,60 @@ async function getBusinesses() {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
-
-// Display last modified date
 document.getElementById("lastModified").textContent = document.lastModified;
+document.addEventListener('DOMContentLoaded', function() {
+ 
+  const now = new Date();
+  document.getElementById('timestamp').value = now.toISOString();
+  
+  
+  const modals = document.querySelectorAll('.modal');
+  const infoBtns = document.querySelectorAll('.info-btn');
+  const closeBtns = document.querySelectorAll('.close');
+  
+  infoBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const modalId = btn.getAttribute('data-modal');
+      document.getElementById(modalId).style.display = 'block';
+    });
+  });
+  
+  closeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.closest('.modal').style.display = 'none';
+    });
+  });
+  
+  window.addEventListener('click', (e) => {
+    if (e.target.classList.contains('modal')) {
+      e.target.style.display = 'none';
+    }
+  });
+  
+  
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const params = new URLSearchParams(window.location.search);
+      
+      document.getElementById('display-name').textContent = 
+        `${params.get('first-name')} ${params.get('last-name')}`;
+      document.getElementById('display-email').textContent = params.get('email');
+      document.getElementById('display-phone').textContent = params.get('phone');
+      document.getElementById('display-business').textContent = params.get('business-name');
+      
+      const level = params.get('membership-level');
+      let levelText = '';
+      switch(level) {
+        case 'np': levelText = 'NP Membership'; break;
+        case 'bronze': levelText = 'Bronze Membership'; break;
+        case 'silver': levelText = 'Silver Membership'; break;
+        case 'gold': levelText = 'Gold Membership'; break;
+        default: levelText = 'Unknown';
+      }
+      document.getElementById('display-level').textContent = levelText;
+      
+      const timestamp = new Date(params.get('timestamp'));
+      document.getElementById('display-date').textContent = timestamp.toLocaleString();
+    });
