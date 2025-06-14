@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="author" content="Cristian Orrego">
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/scripts.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Villa Alemana Chamber of Commerce</title>
+  <meta name="description" content="Discover local businesses in Villa Alemana, Chile">
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="images/logo.png" alt="Villa Alemana Chamber" class="profile-photo">
+        </div>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join Us</a></li>
+            <li><img src="images/contrast-icon.png" alt="Alto Contraste"></li>
+          </ul>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main class="join-container">
+    <h1>Join the Chamber</h1>
+    
+    <div class="join-content">
+      <form id="join-form" method="get" action="thankyou.html">
+       
+        <fieldset>
+          <legend>Personal Information</legend>
+          
+          <label for="first-name">First Name*:
+            <input type="text" id="first-name" name="first-name" required 
+                   autocomplete="given-name" title="Please enter your first name">
+          </label>
+          
+          <label for="last-name">Last Name*:
+            <input type="text" id="last-name" name="last-name" required 
+                   autocomplete="family-name" title="Please enter your last name">
+          </label>
+          
+          <label for="title">Title/Position:
+            <input type="text" id="title" name="title" 
+                   autocomplete="organization-title" title="Your position in the organization"
+                   pattern="[a-zA-Z\- ]{7,}">
+            <span class="hint">Alpha characters, hyphens, and spaces only (min 7 characters)</span>
+          </label>
+          
+          <label for="email">Email*:
+            <input type="email" id="email" name="email" required 
+                   autocomplete="email" title="Please enter your email address"
+                   placeholder="example@domain.com">
+          </label>
+          
+          <label for="phone">Mobile Phone*:
+            <input type="tel" id="phone" name="phone" required 
+                   autocomplete="tel" title="Please enter your phone number">
+          </label>
+        </fieldset>
+        
+        <fieldset>
+          <legend>Business Information</legend>
+          
+          <label for="business-name">Business/Organization Name*:
+            <input type="text" id="business-name" name="business-name" required 
+                   autocomplete="organization" title="Please enter your business name">
+          </label>
+          
+          <label for="membership-level">Membership Level*:
+            <select id="membership-level" name="membership-level" required title="Select membership level">
+              <option value="">Select a level...</option>
+              <option value="np">NP Membership (Non-Profit)</option>
+              <option value="bronze">Bronze Membership</option>
+              <option value="silver">Silver Membership</option>
+              <option value="gold">Gold Membership</option>
+            </select>
+          </label>
+          
+          <label for="description">Business Description:
+            <textarea id="description" name="description" title="Describe your business"></textarea>
+          </label>
+          
+          <input type="hidden" id="timestamp" name="timestamp">
+        </fieldset>
+        
+        <button type="submit">Join Now</button>
+      </form>
+      
+      <div class="membership-cards">
+     
+        <div class="membership-card" id="np-card">
+          <h3>NP Membership</h3>
+          <p>For non-profit organizations</p>
+          <p>No fee</p>
+          <button class="info-btn" data-modal="np-modal">View Benefits</button>
+        </div>
+        
+        <div class="membership-card" id="bronze-card">
+          <h3>Bronze Membership</h3>
+          <p>Basic benefits</p>
+          <button class="info-btn" data-modal="bronze-modal">View Benefits</button>
+        </div>
+        
+        <div class="membership-card" id="silver-card">
+          <h3>Silver Membership</h3>
+          <p>Enhanced benefits</p>
+          <button class="info-btn" data-modal="silver-modal">View Benefits</button>
+        </div>
+        
+        <div class="membership-card" id="gold-card">
+          <h3>Gold Membership</h3>
+          <p>Premium benefits</p>
+          <button class="info-btn" data-modal="gold-modal">View Benefits</button>
+        </div>
+      </div>
+    </div>
+    
+  
+    <div id="np-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>NP Membership Benefits</h3>
+        <ul>
+          <li>Free listing in directory</li>
+          <li>Access to networking events</li>
+          <li>Monthly newsletter</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="bronze-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Bronze Membership Benefits</h3>
+        <ul>
+          <li>All NP benefits</li>
+          <li>Business training sessions</li>
+          <li>Discount on chamber events</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="silver-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Silver Membership Benefits</h3>
+        <ul>
+          <li>All Bronze benefits</li>
+          <li>Featured in newsletter</li>
+          <li>Priority event registration</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div id="gold-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>Gold Membership Benefits</h3>
+        <ul>
+          <li>All Silver benefits</li>
+          <li>Homepage spotlight</li>
+          <li>VIP event access</li>
+          <li>Dedicated business consultant</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+    <footer class="footer">
+  <div class="footer-left">
+    <strong>Villa Alemana Chamber of Commerce</strong><br>
+    Av. Valparaiso 1235<br>
+    villa Alemana<br>
+    info@valemana.org<br>
+    (223) 555-2300
+  </div>
+
+  <div class="footer-center">
+    <a href="#" aria-label="YouTube">
+      <img src="images/youtube-icon.png" alt="YouTube" width="50" height="50">
+    </a>
+    <a href="#" aria-label="Twitter">
+      <img src="images/twitter-icon.png" alt="Twitter" width="50" height="50">
+    </a>
+    <a href="#" aria-label="LinkedIn">
+      <img src="images/linkedin-icon.png" alt="LinkedIn" width="50" height="50">
+    </a>
+  </div>
+
+  <div class="footer-right">
+    <p>WDD231 Class Project<br>
+    Cristian Orrego<br>
+    &copy; 2025 Villa Alemana Chamber of Commerce<br>
+    Last Modification: <span id="lastModified"></span></p>
+  </div>
+</footer>
+    </body>
+    </html>
