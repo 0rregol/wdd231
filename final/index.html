@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chile Earthquakes | Real-time Seismic Data</title>
+    <meta name="description" content="Real-time and recent earthquake activity in Chile, with interactive map and data filters. Stay informed about seismic events.">
+    <meta name="author" content="Cristian Orrego">
+    <meta property="og:title" content="Chile Earthquakes | Real-time Seismic Data">
+    <meta property="og:description" content="Real-time and recent earthquake activity in Chile, with interactive map and data filters. Stay informed about seismic events.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://0rregol.io/wdd231/final/index.html">
+    <meta property="og:image" content="https://0rregol.io/wdd231/final/images/og-image.jpg"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chile Earthquakes</h1>
+            <nav>
+                <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Recent Activity</a></li>
+                    <li><a href="safety.html">Safety Guide</a></li>
+                    <li><a href="history.html">Historical Data</a></li>
+                    <li><a href="attributions.html">Attributions</a></li> </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="recent">
+            <h2>Real-time Seismic Activity</h2>
+            <div class="alert" id="alert-banner" style="display: none;">
+                <strong>Alert:</strong> <span id="alert-text"></span>
+            </div>
+            
+            <div class="dashboard">
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div class="map-controls">
+                        <label for="time-filter" class="sr-only">Filter by time:</label>
+                       <select id="time-filter">
+                            <option value="24" selected>Last 24 hours</option> 
+                            <option value="48">Last 48 hours</option>
+                            <option value="168">Last week</option>
+                        </select>
+                        <label for="magnitude-filter" class="sr-only">Filter by magnitude:</label>
+                        <select id="magnitude-filter">
+                            <option value="0">All magnitudes</option>
+                            <option value="3">M3.0+</option>
+                            <option value="4">M4.0+</option>
+                            <option value="5">M5.0+</option>
+                        </select>
+                        <button id="refresh-btn">Refresh Data</button>
+                    </div>
+                </div>
+                </section>
+                <section>
+                <div class="quake-list">
+                    <h3>Recent Earthquakes</h3>
+                    <div class="stats">
+                        <div class="stat-box">
+                            <span class="stat-value" id="total-quakes">0</span>
+                            <span class="stat-label">Total</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value" id="max-magnitude">0.0</span>
+                            <span class="stat-label">Max Magnitude</span>
+                        </div>
+                    </div>
+                    <div id="quake-list-container"></div>
+                </div>
+            </div>
+        </section>
+      
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentyear"></span> | Cristian Orrego | Chile</p>
+           <p>Data provided by <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson" target="_blank">USGS Earthquake Hazards Program</a></p>
+            <p>Last updated: <span id="last-updated"></span></p>
+          
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts/script.js"></script> 
+</body>
+</html>
