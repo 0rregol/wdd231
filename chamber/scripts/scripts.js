@@ -231,7 +231,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function loadDiscoverData() {
   try {
-    const response = await fetch('discover.json');
+     const response = await fetch('data/discover.json');
     if (!response.ok) throw new Error('Network response was not ok');
     
     const data = await response.json();
