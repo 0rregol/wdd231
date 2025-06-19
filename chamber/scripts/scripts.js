@@ -219,19 +219,22 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById('display-date').textContent = timestamp.toLocaleString();
     });
     
-// Add to DOMContentLoaded event listener
-document.addEventListener('DOMContentLoaded', function() {
-  // ... existing code ...
+
+
+
   
   if (document.querySelector('.discover-container')) {
     loadDiscoverData();
     displayVisitMessage();
   }
-});
+
+
+ document.getElementById('current-year').textContent = new Date().getFullYear();
+
 
 async function loadDiscoverData() {
   try {
-     const response = await fetch('data/discover.json');
+    const response = await fetch('data/discover.json');
     if (!response.ok) throw new Error('Network response was not ok');
     
     const data = await response.json();
@@ -242,12 +245,13 @@ async function loadDiscoverData() {
       item.className = 'gallery-item';
       item.innerHTML = `
         <figure>
-          <img src="images/${attraction.image}" alt="${attraction.name}" loading="lazy">
+          <img src="images/discover/${attraction.image}" alt="${attraction.name}" loading="lazy">
         </figure>
         <div class="gallery-item-content">
           <h2>${attraction.name}</h2>
           <address>${attraction.address}</address>
           <p>${attraction.description}</p>
+          <button class="learn-more-btn">Learn More</button>
         </div>
       `;
       gallery.appendChild(item);
