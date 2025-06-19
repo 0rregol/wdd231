@@ -436,6 +436,11 @@ h3 {
     max-width: 600px;
     margin: 20px auto;
 }
+.share-story-form{
+padding-top: 30px;
+text-align: center;
+
+}
 
 .form-group {
     margin-bottom: 20px;
