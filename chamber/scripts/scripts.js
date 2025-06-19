@@ -251,7 +251,7 @@ async function loadDiscoverData() {
           <h2>${attraction.name}</h2>
           <address>${attraction.address}</address>
           <p>${attraction.description}</p>
-          <div class="learn-more-btn">Learn More</div>
+          <button class="learn-more-btn">Learn More</button>
         </div>
       `;
       gallery.appendChild(item);
