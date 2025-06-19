@@ -1,0 +1,123 @@
+[
+    {
+        "year": 1960,
+        "magnitude": 9.5,
+        "location": "Valdivia, Chile",
+        "date": "May 22, 1960",
+        "description": "The most powerful earthquake ever recorded globally, also known as the Great Chilean Earthquake. It caused widespread devastation and a powerful tsunami that affected the Pacific Rim.",
+        "image": "images/valdivia_1960.jpg"
+    },
+    {
+        "year": 2010,
+        "magnitude": 8.8,
+        "location": "Maule, Chile",
+        "date": "February 27, 2010",
+        "description": "A megathrust earthquake that struck central Chile. It generated a tsunami which devastated several coastal towns and caused significant damage to infrastructure.",
+        "image": "images/maule_2010.jpg"
+    },
+    {
+        "year": 2015,
+        "magnitude": 8.3,
+        "location": "Illapel, Coquimbo, Chile",
+        "date": "September 16, 2015",
+        "description": "A powerful earthquake that triggered a tsunami with waves reaching over 4 meters in some areas. It caused significant damage and led to the evacuation of over a million people.",
+        "image": "images/illapel_2015.jpg"
+    },
+    {
+        "year": 1835,
+        "magnitude": 8.5,
+        "location": "Concepción, Chile",
+        "date": "February 20, 1835",
+        "description": "This earthquake severely damaged Concepción and Talcahuano. Charles Darwin, then on his second voyage on HMS Beagle, witnessed its effects firsthand.",
+        "image": "images/concepcion_1835.jpg"
+    },
+    {
+        "year": 1906,
+        "magnitude": 8.2,
+        "location": "Valparaíso, Chile",
+        "date": "August 16, 1906",
+        "description": "A major earthquake that devastated the city of Valparaíso, causing widespread fires and significant loss of life.",
+        "image": "images/valparaiso_1906.jpg"
+    },
+    
+    {
+        "year": 1985,
+        "magnitude": 8.0,
+        "location": "Central Chile",
+        "date": "March 3, 1985",
+        "description": "Affected a large area of Central Chile, including Santiago and Valparaíso, causing significant damage and fatalities.",
+        "image": "images/central_chile_1985.jpg"
+    },
+    {
+        "year": 1971,
+        "magnitude": 7.7,
+        "location": "Illapel, Coquimbo, Chile",
+        "date": "July 8, 1971",
+        "description": "A strong earthquake that caused damage in the Coquimbo and Valparaíso regions, and a small tsunami.",
+        "image": "images/illapel_1971.jpg"
+    },
+    {
+        "year": 2014,
+        "magnitude": 8.2,
+        "location": "Iquique, Tarapacá, Chile",
+        "date": "April 1, 2014",
+        "description": "A large earthquake that triggered a small tsunami and caused damage in the northern regions of Chile, leading to mass evacuations.",
+        "image": "images/iquique_2014.jpg"
+    },
+    {
+        "year": 1928,
+        "magnitude": 8.0,
+        "location": "Talca, Maule, Chile",
+        "date": "December 1, 1928",
+        "description": "A destructive earthquake that severely affected the Maule Region, including the city of Talca.",
+        "image": "images/talca_1928.jpg"
+    },
+    {
+        "year": 1746,
+        "magnitude": 8.5,
+        "location": "Lima, Peru / Central Chile (indirect impact)",
+        "date": "October 28, 1746",
+        "description": "While centered in Peru, this massive earthquake generated a tsunami that also reached and affected the coast of central Chile.",
+        "image": "images/lima_1746.jpg"
+    },
+    {
+        "year": 1868,
+        "magnitude": 9.0,
+        "location": "Arica (then Peru, now Chile)",
+        "date": "August 13, 1868",
+        "description": "A powerful earthquake and tsunami that devastated Arica (then part of Peru). The tsunami was observed across the Pacific.",
+        "image": "images/arica_1868.jpg"
+    },
+    {
+        "year": 1922,
+        "magnitude": 8.5,
+        "location": "Atacama, Chile",
+        "date": "November 11, 1922",
+        "description": "A major earthquake that struck the Atacama region and generated a destructive tsunami affecting the Chilean coast and as far as Australia.",
+        "image": "images/atacama_1922.jpg"
+    },
+    {
+        "year": 1861,
+        "magnitude": 8.5,
+        "location": "Mendoza, Argentina (felt strongly in Chile)",
+        "date": "March 20, 1861",
+        "description": "Though in Argentina, this quake caused significant damage and was strongly felt in central Chile due to its intensity.",
+        "image": "images/mendoza_1861.jpg"
+    },
+    {
+        "year": 1943,
+        "magnitude": 7.9,
+        "location": "Ovalle, Coquimbo, Chile",
+        "date": "April 6, 1943",
+        "description": "A strong earthquake that caused damage in the Ovalle area and surrounding towns.",
+        "image": "images/ovalle_1943.jpg"
+    },
+    {
+        "year": 1822,
+        "magnitude": 8.5,
+        "location": "Valparaíso, Chile",
+        "date": "November 19, 1822",
+        "description": "A significant earthquake followed by a tsunami that caused damage in Valparaíso and other coastal areas.",
+        "image": "images/valparaiso_1822.jpg"
+    }
+]
