@@ -1,90 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <meta name="description" content="index wdd231">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chile Earthquakes | Real-time Seismic Data</title>
+    <meta name="description" content="Real-time and recent earthquake activity in Chile, with interactive map and data filters. Stay informed about seismic events.">
     <meta name="author" content="Cristian Orrego">
+    <meta property="og:title" content="Chile Earthquakes | Real-time Seismic Data">
+    <meta property="og:description" content="Real-time and recent earthquake activity in Chile, with interactive map and data filters. Stay informed about seismic events.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://0rregol.github.io/wdd231/final/index.html">
+    <meta property="og:image" content="https://0rregol.github.io/wdd231/final/images/og-image.jpg"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/scripts.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <title>Cristian Orrego</title>
-  </head>
-  <body>
+</head>
+<body>
     <header>
-      <div class="top">
-        <img src="images/yo.jpg" alt="Profile Picture" class="profile-photo">
-        <h1>Cristian Jorge Orrego</h1>
-      </div>
-        <nav>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">Final </a></li>
-                <li><a href="#">GitHub Profile </a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-            <div class="hamburger" id="hamburger">
-              <i class="fas fa-bars"></i>
-            </div>
-        </nav>
+        <div class="container">
+            <h1>Chile Earthquakes</h1>
+            <nav>
+                <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Recent Activity</a></li>
+                    <li><a href="safety.html">Safety Guide</a></li>
+                    <li><a href="history.html">Historical Data</a></li>
+                    </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-      <h1>Home</h1>
-      <div class="container">
-      <section class="left">
-        <div class="card">
-          <div class="blue"><h2>Course Work</h2></div>
-          <div class="card-content">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div>
-        </div>
-      </section>
-      <section class="right">
-        <div class="card">
-          <div class="blue"><h2>Villa Alemana, Chile</h2></div>
-          <div class="card-content">
-      <figure>
-        <img src="images/valemana.jpg" alt="Villa Alemana">
-        <figcaption>Villa Alemana is a beautiful city located in the Valparaíso Region of Chile.</figcaption>
-      </figure>
-      </div>
-      </div>
-    </section>
-  </div>
-      <section class="down">
-        <div class="card">
-          <div class="blue"><h2>Web and Computer Programming Certificate</h2></div>
-          <div class="card-content">
+
+    <main class="container">
+        <section id="recent">
+            <h1>Real-time Seismic Activity</h1>
+            <div class="alert" id="alert-banner" style="display: none;">
+                <strong>Alert:</strong> <span id="alert-text"></span>
+            </div>
             
-              <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All</button>
-              <button class="filter-btn" data-filter="CSE">CSE</button>
-              <button class="filter-btn" data-filter="WDD">WDD</button>
-              </div>
-         
-          <div class="courses">
-              <div class="course CSE"><button class="complete">CSE 110</button></div>
-            <div class="course WDD"><button class="complete">WDD 130</button></div>
-               <div class="course CSE"><button class="complete">CSE 111</button></div>
-               <div class="course CSE"><button class="incomplete">CSE 210</button></div>
-            <div class="course WDD"><button class="complete">WDD 131</button></div>
-            <div class="course WDD"><button class="incomplete">WDD 231</button></div>
-        </div>
-        </div>
-        </div>
-      </section>
+            <div class="dashboard">
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div class="map-controls">
+                        <label for="time-filter" class="sr-only">Filter by time:</label>
+                       <select id="time-filter">
+                            <option value="24" selected>Last 24 hours</option> 
+                            <option value="48">Last 48 hours</option>
+                            <option value="168">Last week</option>
+                        </select>
+                        <label for="magnitude-filter" class="sr-only">Filter by magnitude:</label>
+                        <select id="magnitude-filter">
+                            <option value="0">All magnitudes</option>
+                            <option value="3">M3.0+</option>
+                            <option value="4">M4.0+</option>
+                            <option value="5">M5.0+</option>
+                        </select>
+                        <button id="refresh-btn">Refresh Data</button>
+                    </div>
+                </div>
+                </section>
+                <section>
+                <div class="quake-list">
+                    <h3>Recent Earthquakes</h3>
+                    <div class="stats">
+                        <div class="stat-box">
+                            <span class="stat-value" id="total-quakes">0</span>
+                            <span class="stat-label">Total</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-value" id="max-magnitude">0.0</span>
+                            <span class="stat-label">Max Magnitude</span>
+                        </div>
+                    </div>
+                    <div id="quake-list-container"></div>
+                </div>
+            </div>
+        </section>
+         <section id="attributions-content">
+            <h2>Attributions</h2>
+            <ul>
+                <li><strong>Earthquake Data:</strong> <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/" target="_blank">USGS Earthquake Hazards Program</a></li>
+                <li><strong>Map Library:</strong> <a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
+                <li><strong>Font:</strong> <a href="https://fonts.google.com/specimen/Montserrat" target="_blank">Montserrat</a> from Google Fonts</li>
+                <li><strong>Historical Earthquake Data:</strong> Information compiled from publicly available seismic history databases (e.g., USGS, Wikipedia for notable events).</li>
+                <li><strong>Safety Information:</strong> General earthquake preparedness guidelines adapted from official sources (e.g., FEMA, Red Cross, Chilean emergency agencies).</li>
+                <li><strong>Images:</strong>images taken from Google Photos</li>
+            </ul>
+        </section>
     </main>
+
     <footer>
-      <p>&copy; <span id="currentyear"></span> | Cristian Orrego | Chile</p>
-      <span class="yellow">Last Modification </span> <span id="lastModified" class="yellow"></span>
-  </footer>
-  </body>
+        <div class="container">
+            <p>&copy; <span id="currentyear"></span> | Cristian Orrego | Chile</p>
+           <p>Data provided by <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson" target="_blank">USGS Earthquake Hazards Program</a></p>
+            <p>Last updated: <span id="last-updated"></span></p>
+          
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="scripts/script.js"></script> 
+</body>
 </html>

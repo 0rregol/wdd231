@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chile Earthquakes | Safety Guide</title>
+    <meta name="description" content="Comprehensive guide on earthquake safety for Chile, including what to do before, during, and after an earthquake.">
+       <meta name="author" content="Cristian Orrego">
+    <meta property="og:title" content="Chile Earthquakes | Real-time Seismic Data">
+    <meta property="og:description" content="Real-time and recent earthquake activity in Chile, with interactive map and data filters. Stay informed about seismic events.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://0rregol.github.io/wdd231/final/images/og-image.jpg"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chile Earthquakes</h1>
+            <nav>
+                <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+             <ul class="nav-links">
+                    <li><a href="index.html" >Recent Activity</a></li>
+                    <li><a href="safety.html" class="active">Safety Guide</a></li>
+                    <li><a href="history.html">Historical Data</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="safety">
+            <h2>Earthquake Safety Information</h2>
+            <div class="safety-grid">
+                <div class="safety-card">
+                    <h3>Before an Earthquake</h3>
+                    <ul>
+                        <li>Prepare an emergency kit with water, food, flashlight, and first aid supplies</li>
+                        <li>Secure heavy furniture and appliances to walls</li>
+                        <li>Identify safe spots in each room (under sturdy tables, against interior walls)</li>
+                        <li>Practice drop, cover, and hold on drills with your family</li>
+                        <li>Develop a family emergency plan and designated meeting points</li>
+                    </ul>
+                </div>
+                <div class="safety-card">
+                    <h3>During an Earthquake</h3>
+                    <ul>
+                        <li>Drop to your hands and knees to prevent being knocked over</li>
+                        <li>Cover your head and neck with your arms, take cover under sturdy furniture</li>
+                        <li>Hold on to any sturdy shelter until shaking stops</li>
+                        <li>If indoors, stay there - don't run outside</li>
+                        <li>If in bed, stay there and protect your head with a pillow</li>
+                        <li>Stay clear of windows, tall furniture, and light fixtures</li>
+                    </ul>
+                </div>
+                <div class="safety-card">
+                    <h3>After an Earthquake</h3>
+                    <ul>
+                        <li>Check yourself and others for injuries</li>
+                        <li>Be prepared for aftershocks</li>
+                        <li>If in a damaged building, go outside carefully</li>
+                        <li>Only use phones for emergencies</li>
+                        <li>Listen to official information sources for instructions</li>
+                        <li>If you smell gas, turn off the main gas valve and evacuate</li>
+                    </ul>
+                </div>
+                <div class="safety-card emergency-kit">
+                    <h3>Emergency Kit Checklist</h3>
+                    <button id="open-kit-modal" class="button-primary">View Full Checklist</button>
+                    <div id="kit-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display: none;">
+                        <div class="modal-content">
+                            <h4 id="modal-title">Your Earthquake Emergency Kit</h4>
+                            <ul>
+                                <li>Water (4 liters per person per day for 3 days)</li>
+                                <li>Non-perishable food (3-day supply for each person)</li>
+                                <li>First aid kit, medications, and prescription glasses</li>
+                                <li>Flashlight and extra batteries (LED recommended)</li>
+                                <li>Whistle to signal for help</li>
+                                <li>Dust masks and plastic sheeting/duct tape (to shelter-in-place)</li>
+                                <li>Manual can opener (if food includes canned goods)</li>
+                                <li>Wrench or pliers (to turn off utilities)</li>
+                                <li>Local maps and emergency contact information (paper copies)</li>
+                                <li>Battery-powered or hand-crank radio</li>
+                                <li>Cell phone with chargers and backup battery</li>
+                                <li>Personal hygiene items (wet wipes, hand sanitizer)</li>
+                                <li>Important family documents (copies in waterproof bag)</li>
+                                <li>Cash in small denominations</li>
+                                <li>Sleeping bag or warm blanket for each person</li>
+                                <li>Matches in a waterproof container</li>
+                                <li>Change of clothes for each person</li>
+                              
+                            </ul>
+                            <button id="close-kit-modal" class="button-secondary">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentyear"></span> | Cristian Orrego | Chile</p>
+            <p>Data provided by <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson" target="_blank">USGS Earthquake Hazards Program</a></p>
+            <p>Last updated: <span id="last-updated-safety"></span></p>
+           
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script> 
+</body>
+</html>

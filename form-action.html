@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Submitted | Chile Earthquakes</title>
+    <meta name="description" content="Thank you for sharing your earthquake story with us.">
+     <meta name="author" content="Cristian Orrego">
+    <meta property="og:title" content="Chile Earthquakes | Real-time Seismic Data">
+    <meta property="og:description" content="Real-time and recent earthquake activity in Chile, with interactive map and data filters. Stay informed about seismic events.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://0rregol.github.io/wdd231/final/images/og-image.jpg"> 
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chile Earthquakes</h1>
+            <nav>
+                <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+              <ul class="nav-links">
+                    <li><a href="index.html">Recent Activity</a></li>
+                    <li><a href="safety.html">Safety Guide</a></li>
+                    <li><a href="history.html">Historical Data</a></li>
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="form-success">
+            <h2>Thank You for Your Story!</h2>
+            <p>We appreciate you sharing your experience. Here is the information you submitted:</p>
+            <div id="submitted-data" class="submitted-data-display">
+                </div>
+            <p><a href="index.html" class="button-primary">Go back to Home</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentyear"></span> | Cristian Orrego | Chile</p>
+            <p>Data provided by <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson" target="_blank">USGS Earthquake Hazards Program</a></p>
+            <p>Last updated: <span id="last-updated-form-action"></span></p>
+           
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script> 
+</body>
+</html>
