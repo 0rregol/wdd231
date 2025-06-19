@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chile Earthquakes | Historical Data</title>
+    <meta name="description" content="Explore the history of major earthquakes in Chile, including detailed information on significant seismic events. Share your earthquake story.">
+    <meta name="author" content="Cristian Orrego">
+    <meta property="og:title" content="Chile Earthquakes | Real-time Seismic Data">
+    <meta property="og:description" content="Real-time and recent earthquake activity in Chile, with interactive map and data filters. Stay informed about seismic events.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://0rregol.io/wdd231/final/index.html">
+    <meta property="og:image" content="https://0rregol.io/wdd231/final/images/og-image.jpg"> 
+     <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Chile Earthquakes</h1>
+            <nav>
+                <button class="hamburger-menu" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            <ul class="nav-links">
+                    <li><a href="index.html" >Recent Activity</a></li>
+                    <li><a href="safety.html">Safety Guide</a></li>
+                    <li><a href="history.html" class="active">Historical Data</a></li>
+                    <li><a href="attributions.html">Attributions</a></li> </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="historical">
+            <h2>Notable Earthquakes in Chile</h2>
+            <div id="historical-quake-cards" class="historical-grid">
+                </div>
+
+            <section id="share-story-form">
+                <h2>Share Your Earthquake Story</h2>
+                <p>Have you experienced an earthquake in Chile? Share your story with us.</p>
+                <form id="storyForm" action="form-action.html" method="GET">
+                    <div class="form-group">
+                        <label for="story-name">Your Name (Optional):</label>
+                        <input type="text" id="story-name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="story-location">Location of Experience:</label>
+                        <input type="text" id="story-location" name="location" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="story-date">Approximate Date (Optional):</label>
+                        <input type="date" id="story-date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="story-magnitude">Approximate Magnitude (Optional, e.g., 7.0):</label>
+                        <input type="number" id="story-magnitude" name="magnitude" step="0.1" min="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="story-message">Your Story:</label>
+                        <textarea id="story-message" name="message" rows="7" required></textarea>
+                    </div>
+                   
+                    <button type="submit" class="button-primary">Submit Story</button>
+                </form>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentyear"></span> | Cristian Orrego | Chile</p>
+            <p>Data provided by <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.geojson" target="_blank">USGS Earthquake Hazards Program</a></p>
+            <p>Last updated: <span id="last-updated-history"></span></p>
+           
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script> 
+</body>
+</html>
