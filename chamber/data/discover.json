@@ -1,0 +1,52 @@
+{
+  "attractions": [
+    {
+      "name": "La Reserva Park",
+      "address": "Bellavista 4545, Quebrada Escobares, Villa Alemana",
+      "description": "This park offers an ideal space to connect with nature, featuring trails, viewpoints, bridges, green areas, and picnic zones. Perfect for a family day out with abundant native flora and fauna.",
+      "image": "park.webp"
+    },
+    {
+      "name": "Pompeya Municipal Theater",
+      "address": "Paseo Peatonal Los Héroes, between Av. Valparaíso and Santiago Street, Villa Alemana",
+      "description": "A cultural landmark of Villa Alemana, this theater is a Historical Monument. Guided tours showcase its history and architecture, and it frequently hosts folkloric performances and cultural activities.",
+      "image": "theater.webp"
+    },
+    {
+      "name": "Lo Godoy and Pejerreyes Wetlands",
+      "address": "Located in Villa Alemana",
+      "description": "These urban wetlands are important environmental protection areas in the community. Ideal for birdwatching and enjoying local biodiversity, offering a natural retreat within the city.",
+      "image": "wetlands.webp"
+    },
+    {
+      "name": "Los Pavos Reales Eco-Reserve",
+      "address": "Bellavista 4545, Quebrada Escobares, Villa Alemana",
+      "description": "For a closer wildlife experience, this private conservation initiative lets you observe peacocks up close in their natural habitat.",
+      "image": "ecoreserve.webp"
+    },
+    {
+      "name": "Belén Civic Park",
+      "address": "Villa Alemana",
+      "description": "Recently renovated, this park is a community gathering point featuring artisan stalls, entrepreneur pergolas, public restrooms, and a tourist information office - perfect for a leisurely stroll or finding local products.",
+      "image": "belen-park.webp"
+    },
+    {
+      "name": "Los Pinos Hill (Peñablanca)",
+      "address": "Barrancas Street, Los Pinos neighborhood, Quilpué",
+      "description": "Located near the Peñablanca station, Los Pinos Hill is a popular spot for family outings and gatherings, offering scenic views and natural surroundings for outdoor enjoyment.",
+      "image": "pinos-hill.webp"
+    },
+    {
+      "name": "Ítalo Composto Stadium",
+      "address": "Av. Valparaíso 1650, Villa Alemana",
+      "description": "This municipal stadium is an important sports venue in Villa Alemana, hosting various football activities and community events - a reference point for local sports enthusiasts.",
+      "image": "stadium.webp"
+    },
+    {
+      "name": "Paul Harris Public Library",
+      "address": "Buenos Aires 850, Villa Alemana",
+      "description": "A center of knowledge and cultural activities, frequently offering exhibitions, workshops for all ages, and various presentations, especially during events like Heritage Day.",
+      "image": "library.webp"
+    }
+  ]
+}
