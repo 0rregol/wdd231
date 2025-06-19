@@ -33,7 +33,7 @@ async function fetchEarthquakeData() {
         const data = await response.json();
         return data.features;
     } catch (error) {
-        console.error('Error fetching earthquake data from USGS:', error);
+        
         return null;
     }
 }
@@ -256,7 +256,7 @@ function displayHistoricalQuakes(quakes) {
         let imageHtml = '';
         if (quake.image) {
            
-            imageHtml = `<img src="${quake.image}" alt="Image of the ${quake.year} ${quake.location} earthquake" class="historical-card-image">`;
+            imageHtml = `<img src="${quake.image}" alt="Image of the ${quake.year} ${quake.location} earthquake" class="historical-card-image" loading="lazy">`;
         }
 
         card.innerHTML = `
