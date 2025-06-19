@@ -245,7 +245,7 @@ async function loadDiscoverData() {
       item.className = 'gallery-item';
       item.innerHTML = `
         <figure>
-          <img src="images/discover/${attraction.image}" alt="${attraction.name}" loading="lazy">
+          <img src="images/${attraction.image}" alt="${attraction.name}" loading="lazy">
         </figure>
         <div class="gallery-item-content">
           <h2>${attraction.name}</h2>
