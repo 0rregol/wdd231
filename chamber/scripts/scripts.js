@@ -218,3 +218,63 @@ document.addEventListener('DOMContentLoaded', function() {
       const timestamp = new Date(params.get('timestamp'));
       document.getElementById('display-date').textContent = timestamp.toLocaleString();
     });
+    
+// Add to DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+  // ... existing code ...
+  
+  if (document.querySelector('.discover-container')) {
+    loadDiscoverData();
+    displayVisitMessage();
+  }
+});
+
+async function loadDiscoverData() {
+  try {
+    const response = await fetch('data/discover.json');
+    if (!response.ok) throw new Error('Network response was not ok');
+    
+    const data = await response.json();
+    const gallery = document.querySelector('.gallery');
+    
+    data.attractions.forEach(attraction => {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      item.innerHTML = `
+        <figure>
+          <img src="images/${attraction.image}" alt="${attraction.name}" loading="lazy">
+        </figure>
+        <div class="gallery-item-content">
+          <h2>${attraction.name}</h2>
+          <address>${attraction.address}</address>
+          <p>${attraction.description}</p>
+        </div>
+      `;
+      gallery.appendChild(item);
+    });
+  } catch (error) {
+    console.error('Error loading discover data:', error);
+    document.querySelector('.gallery').innerHTML = '<p>Unable to load attractions data.</p>';
+  }
+}
+
+function displayVisitMessage() {
+  const visitMessage = document.getElementById('visit-message');
+  const lastVisit = localStorage.getItem('lastVisit');
+  const currentDate = Date.now();
+  
+  if (!lastVisit) {
+    visitMessage.textContent = "Welcome! Let us know if you have any questions.";
+  } else {
+    const daysBetween = Math.floor((currentDate - lastVisit) / (1000 * 60 * 60 * 24));
+    
+    if (daysBetween === 0) {
+      visitMessage.textContent = "Back so soon! Awesome!";
+    } else {
+      const dayText = daysBetween === 1 ? "day" : "days";
+      visitMessage.textContent = `You last visited ${daysBetween} ${dayText} ago.`;
+    }
+  }
+  
+  localStorage.setItem('lastVisit', currentDate);
+}
